@@ -9,11 +9,11 @@ function Playground() {
     }
 
     console.log(`🔵 Schedule Logging: "${text}"`);
-    const timeoutId = setTimeout(onTimeout, 3000);
+    const timeoutId = setInterval(onTimeout, 3000);
 
     return () => {
       console.log(`🟡 Cancel Logging: "${text}"`);
-      clearTimeout(timeoutId);
+      clearInterval(timeoutId);
     };
   }, [text]);
 
